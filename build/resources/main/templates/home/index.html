@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="'The request was ' + ${params}"></p>
+    <table>
+        <thead>
+        <tr>
+            <td>Number</td>
+            <td>Request</td>
+            <td>Date</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ourParam,rowStat: ${everything}">
+            <td th:text="${rowStat.count}"></td>
+            <td th:text="${ourParam.getReqParamsString()}"></td>
+            <td th:text="${ourParam.getReqDate()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
